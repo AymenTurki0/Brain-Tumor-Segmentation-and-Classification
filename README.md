@@ -1,3 +1,4 @@
+```markdown
 # Brain Tumor Segmentation and Classification
 
 A multi-task deep learning model for simultaneous brain tumor segmentation and classification using the BRISC2025 dataset. This implementation uses a lightweight U-Net architecture optimized for Google Colab training.
@@ -45,7 +46,7 @@ A high-quality, expert-annotated MRI dataset addressing common limitations in ex
 
 **Lightweight Multi-Task U-Net**
 
-![U-Net Architecture](https://production-media.paperswithcode.com/methods/Screen_Shot_2020-07-07_at_9.08.00_PM_rpNArED.png)
+![U-Net Architecture](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-architecture.png)
 
 The model features a shared encoder with two specialized decoder branches:
 
@@ -74,8 +75,6 @@ The model features a shared encoder with two specialized decoder branches:
 
 ## Training Configuration
 
-![Training](https://img.shields.io/badge/Training-Optimized-success)
-
 **Hyperparameters:**
 ```
 Image size: 128x128
@@ -93,7 +92,7 @@ Validation split: 15%
 - Random horizontal flipping
 - Random brightness adjustment
 
-![Data Augmentation](https://miro.medium.com/v2/resize:fit:1400/1*C8hNiOqur4OJyEZmC7OnzQ.png)
+![Data Augmentation](https://miro.medium.com/max/1400/1*C8hNiOqur4OJyEZmC7OnzQ.png)
 
 ---
 
@@ -114,7 +113,7 @@ The model demonstrates excellent performance across both tasks:
 | Sensitivity | 0.7908 |
 | Specificity | 0.9978 |
 
-![Segmentation Results](https://www.mdpi.com/brainsci/brainsci-11-01352/article_deploy/html/images/brainsci-11-01352-g004.png)
+![Segmentation Results](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41598-020-79139-8/MediaObjects/41598_2020_79139_Fig3_HTML.png)
 
 These metrics indicate strong tumor boundary detection with high precision and minimal false positives.
 
@@ -122,7 +121,7 @@ These metrics indicate strong tumor boundary detection with high precision and m
 
 ## Setup and Installation
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
+![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)
 
 **Requirements:**
 ```bash
@@ -154,7 +153,7 @@ Brain Tumor Segmentation and Classification/
 
 3. Run the training script in a Colab notebook cell
 
-![Colab Interface](https://miro.medium.com/v2/resize:fit:1400/1*FUIlH1Y36HLp7RHj-kRYNQ.png)
+![Google Colab](https://miro.medium.com/max/1400/1*Lad06lrjlU9UZgSTHUoyfA.png)
 
 ---
 
@@ -192,7 +191,7 @@ The custom callback displays epoch-by-epoch metrics:
 
 ## Model Performance
 
-![Training Curves](https://www.researchgate.net/publication/355208152/figure/fig2/AS:1078697012916224@1633792037767/Training-and-validation-accuracy-and-loss-curves.png)
+![Training Curves](https://miro.medium.com/max/1400/1*4G9_5Z6kP_5MvzUvL_vUVA.png)
 
 Training achieves convergence within 50 epochs with early stopping monitoring. The multi-task learning approach enables the model to leverage shared representations, improving both segmentation and classification performance.
 
@@ -234,7 +233,7 @@ This implementation includes several optimizations for Colab training:
 - 💾 Efficient data generators with on-the-fly loading
 - 🎲 Stratified train-validation split
 
-![Performance Comparison](https://miro.medium.com/v2/resize:fit:1400/1*ZvPYRazjoNOb8kzV5K8MJA.png)
+![GPU Optimization](https://developers.google.com/static/machine-learning/practica/image-classification/images/cnn-architecture.svg)
 
 ---
 
@@ -285,3 +284,4 @@ Dataset curated and annotated by expert radiologists and physicians. Model archi
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Keras](https://img.shields.io/badge/Keras-D00000?style=flat&logo=keras&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)
+```
