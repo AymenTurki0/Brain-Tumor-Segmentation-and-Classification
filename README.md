@@ -1,8 +1,6 @@
-```markdown
 # Brain Tumor Segmentation and Classification
 
 A multi-task deep learning model for simultaneous brain tumor segmentation and classification using the BRISC2025 dataset. This implementation uses a lightweight U-Net architecture optimized for Google Colab training.
-
 
 ## Overview
 
@@ -12,14 +10,9 @@ This project implements a dual-output neural network that performs:
 
 The model achieves strong performance with optimized training parameters designed for efficient Colab execution.
 
-
----
-
 ## Dataset
 
 **BRISC 2025** (Brain Tumor MRI Dataset for Segmentation and Classification)
-
-
 
 A high-quality, expert-annotated MRI dataset addressing common limitations in existing datasets like BraTS and Figshare. The dataset includes class imbalance corrections, comprehensive tumor coverage, and consistent radiologist-verified annotations.
 
@@ -36,27 +29,23 @@ A high-quality, expert-annotated MRI dataset addressing common limitations in ex
 - **pi**: Pituitary
 - **nt**: No Tumor
 
----
-
 ## Architecture
 
 **Lightweight Multi-Task U-Net**
 
-
-
 The model features a shared encoder with two specialized decoder branches:
 
-### Encoder:
+**Encoder:**
 - Three encoder blocks with progressively increasing filters (32, 64, 128)
 - Max pooling for downsampling
 - Batch normalization and ReLU activation
 
-### Segmentation Branch:
+**Segmentation Branch:**
 - Three decoder blocks with skip connections
 - Transposed convolutions for upsampling
 - Binary mask output with sigmoid activation
 
-### Classification Branch:
+**Classification Branch:**
 - Global average pooling on bottleneck features
 - Two dense layers (128, 64 units) with dropout
 - Softmax output for 4-class prediction
@@ -66,8 +55,6 @@ The model features a shared encoder with two specialized decoder branches:
 - Smaller input resolution (128x128)
 - Lightweight classification head
 - Efficient skip connections
-
----
 
 ## Training Configuration
 
@@ -88,14 +75,11 @@ Validation split: 15%
 - Random horizontal flipping
 - Random brightness adjustment
 
-
----
-
 ## Results
 
 The model demonstrates excellent performance across both tasks:
 
-### Segmentation Metrics:
+**Segmentation Metrics:**
 
 | Metric | Score |
 |--------|-------|
@@ -105,15 +89,9 @@ The model demonstrates excellent performance across both tasks:
 | Sensitivity | 0.7908 |
 | Specificity | 0.9978 |
 
-
-
 These metrics indicate strong tumor boundary detection with high precision and minimal false positives.
 
----
-
 ## Setup and Installation
-
-
 
 **Requirements:**
 ```bash
@@ -145,9 +123,6 @@ Brain Tumor Segmentation and Classification/
 
 3. Run the training script in a Colab notebook cell
 
-
----
-
 ## Usage
 
 **Training:**
@@ -178,10 +153,7 @@ The custom callback displays epoch-by-epoch metrics:
 - Classification loss and accuracy
 - Validation metrics for both tasks
 
----
-
 ## Model Performance
-
 
 Training achieves convergence within 50 epochs with early stopping monitoring. The multi-task learning approach enables the model to leverage shared representations, improving both segmentation and classification performance.
 
@@ -190,8 +162,6 @@ Training achieves convergence within 50 epochs with early stopping monitoring. T
 - Near-perfect specificity minimizes false tumor predictions
 - Balanced sensitivity ensures most tumors are correctly identified
 - Strong pixel accuracy reflects overall segmentation quality
-
----
 
 ## File Naming Convention
 
@@ -208,10 +178,16 @@ brisc2025_train_00001_gl_ax_t1.jpg
 - View: `ax/co/sa` (axial/coronal/sagittal)
 - Sequence: `t1` (T1-weighted)
 
----
+## Optimization Features
 
+This implementation includes several optimizations for Colab training:
 
----
+- 4x faster processing with reduced image resolution
+- 2x larger batch size for better GPU utilization
+- 50% reduction in model parameters
+- Simplified architecture with 3 encoder layers
+- Efficient data generators with on-the-fly loading
+- Stratified train-validation split
 
 ## Next Steps
 
@@ -221,13 +197,9 @@ After training completion:
 3. Visualize predictions on sample images
 4. Export model for deployment or inference
 
----
-
 ## License
 
 Please refer to the BRISC2025 dataset documentation for usage terms and conditions.
-
----
 
 ## Citation
 
@@ -241,3 +213,6 @@ If you use this code or the BRISC2025 dataset, please cite:
 }
 ```
 
+## Acknowledgments
+
+Dataset curated and annotated by expert radiologists and physicians. Model architecture based on the U-Net framework adapted for multi-task learning.
