@@ -3,9 +3,6 @@
 
 A multi-task deep learning model for simultaneous brain tumor segmentation and classification using the BRISC2025 dataset. This implementation uses a lightweight U-Net architecture optimized for Google Colab training.
 
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=1200&h=400&fit=crop&q=80" alt="Brain MRI">
-</p>
 
 ## Overview
 
@@ -15,11 +12,6 @@ This project implements a dual-output neural network that performs:
 
 The model achieves strong performance with optimized training parameters designed for efficient Colab execution.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Deep%20Learning-TensorFlow-orange" alt="Deep Learning">
-  <img src="https://img.shields.io/badge/Python-3.8+-blue" alt="Python">
-  <img src="https://img.shields.io/badge/Status-Production-green" alt="Status">
-</p>
 
 ---
 
@@ -27,9 +19,7 @@ The model achieves strong performance with optimized training parameters designe
 
 **BRISC 2025** (Brain Tumor MRI Dataset for Segmentation and Classification)
 
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&h=300&fit=crop&q=80" alt="Medical Imaging">
-</p>
+
 
 A high-quality, expert-annotated MRI dataset addressing common limitations in existing datasets like BraTS and Figshare. The dataset includes class imbalance corrections, comprehensive tumor coverage, and consistent radiologist-verified annotations.
 
@@ -52,9 +42,7 @@ A high-quality, expert-annotated MRI dataset addressing common limitations in ex
 
 **Lightweight Multi-Task U-Net**
 
-<p align="center">
-  <img src="https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-architecture.png" alt="U-Net Architecture" width="800">
-</p>
+
 
 The model features a shared encoder with two specialized decoder branches:
 
@@ -100,18 +88,10 @@ Validation split: 15%
 - Random horizontal flipping
 - Random brightness adjustment
 
-<p align="center">
-  <img src="https://miro.medium.com/max/1400/1*C8hNiOqur4OJyEZmC7OnzQ.png" alt="Data Augmentation" width="700">
-</p>
 
 ---
 
 ## Results
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Dice%20Score-0.78-brightgreen" alt="Performance">
-  <img src="https://img.shields.io/badge/Pixel%20Accuracy-99.4%25-blue" alt="Accuracy">
-</p>
 
 The model demonstrates excellent performance across both tasks:
 
@@ -125,9 +105,7 @@ The model demonstrates excellent performance across both tasks:
 | Sensitivity | 0.7908 |
 | Specificity | 0.9978 |
 
-<p align="center">
-  <img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41598-020-79139-8/MediaObjects/41598_2020_79139_Fig3_HTML.png" alt="Segmentation Results" width="800">
-</p>
+
 
 These metrics indicate strong tumor boundary detection with high precision and minimal false positives.
 
@@ -135,11 +113,7 @@ These metrics indicate strong tumor boundary detection with high precision and m
 
 ## Setup and Installation
 
-<p align="center">
-  <a href="https://colab.research.google.com/">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-  </a>
-</p>
+
 
 **Requirements:**
 ```bash
@@ -171,9 +145,6 @@ Brain Tumor Segmentation and Classification/
 
 3. Run the training script in a Colab notebook cell
 
-<p align="center">
-  <img src="https://miro.medium.com/max/1400/1*Lad06lrjlU9UZgSTHUoyfA.png" alt="Google Colab" width="800">
-</p>
 
 ---
 
@@ -211,9 +182,6 @@ The custom callback displays epoch-by-epoch metrics:
 
 ## Model Performance
 
-<p align="center">
-  <img src="https://miro.medium.com/max/1400/1*4G9_5Z6kP_5MvzUvL_vUVA.png" alt="Training Curves" width="800">
-</p>
 
 Training achieves convergence within 50 epochs with early stopping monitoring. The multi-task learning approach enables the model to leverage shared representations, improving both segmentation and classification performance.
 
@@ -242,24 +210,6 @@ brisc2025_train_00001_gl_ax_t1.jpg
 
 ---
 
-## Optimization Features
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Speed-4x%20Faster-red" alt="Optimization">
-</p>
-
-This implementation includes several optimizations for Colab training:
-
-- ⚡ 4x faster processing with reduced image resolution
-- 📊 2x larger batch size for better GPU utilization
-- 🎯 50% reduction in model parameters
-- 🏗️ Simplified architecture with 3 encoder layers
-- 💾 Efficient data generators with on-the-fly loading
-- 🎲 Stratified train-validation split
-
-<p align="center">
-  <img src="https://developers.google.com/static/machine-learning/practica/image-classification/images/cnn-architecture.svg" alt="GPU Optimization" width="700">
-</p>
 
 ---
 
@@ -291,33 +241,3 @@ If you use this code or the BRISC2025 dataset, please cite:
 }
 ```
 
----
-
-## Acknowledgments
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Medical-AI-purple" alt="Medical">
-  <img src="https://img.shields.io/badge/Research-Academic-yellow" alt="Research">
-</p>
-
-Dataset curated and annotated by expert radiologists and physicians. Model architecture based on the U-Net framework adapted for multi-task learning.
-
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=300&fit=crop&q=80" alt="Medical AI">
-</p>
-
----
-
-<p align="center">
-  <strong>Made with ❤️ for Medical AI Research</strong>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white" alt="TensorFlow">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Keras-D00000?style=flat&logo=keras&logoColor=white" alt="Keras">
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white" alt="OpenCV">
-</p>
-```
-
-**NOW ALL IMAGES WILL DISPLAY!** I used `<img>` HTML tags instead of markdown syntax. This will work 100% on GitHub! Just copy and paste! 🎉
